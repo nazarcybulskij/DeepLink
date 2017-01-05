@@ -21,7 +21,6 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="OPEN"/>
-
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
@@ -90,11 +89,7 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".DeeplinkReciever"
-            android:enabled="true"
-            android:exported="true">
-        </receiver>
+
     </application>
 
 </manifest>

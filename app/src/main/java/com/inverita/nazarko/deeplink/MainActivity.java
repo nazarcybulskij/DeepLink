@@ -79,21 +79,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                                     // Extract deep link from Intent
                                     Intent intent = result.getInvitationIntent();
                                     String deepLink = AppInviteReferral.getDeepLink(intent);
-
-                                    String studentstr =  intent.getData().getQueryParameter("custom_parameters");
-
-
                                     // Handle the deep link. For example, open the linked
                                     // content, or apply promotional credit to the user's
                                     // account.
-
                                     // [START_EXCLUDE]
                                     // Display deep link in the UI
-
-
                                     ((TextView) findViewById(R.id.link_view_receive)).setText(deepLink);
-
-
 //                                    if (deepLink.endsWith("news")){
 //                                        startActivity(new Intent(MainActivity.this,Main2Activity.class));
 //                                    }
@@ -121,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 //                //((TextView) findViewById(R.id.link_view_receive)).setText(msg);
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW,Uri.parse(link));;
                 startActivity(browserIntent);
+                browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
 
                 //Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
@@ -178,14 +170,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         return builder.build();
     }
 
-    private void shareDeepLink(String deepLink) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Firebase Deep Link");
-        intent.putExtra(Intent.EXTRA_TEXT,deepLink);
 
-        startActivity(intent);
-    }
 
     private void validateAppCode() {
         String appCode = getString(R.string.app_code);
