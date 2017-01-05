@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Firebase Dynamic Links</string>
+
+    <!--
+      Your app code, see:
+      https://firebase.google.com/docs/dynamic-links/android  a97pd
+    -->
+    <string name="app_code">a97pd</string>
+
+
+    <string name="share">Share</string>
+    <string name="title_receive">Receive</string>
+    <string name="title_send">Send</string>
+    <string name="msg_no_deep_link">No deep link received.</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
